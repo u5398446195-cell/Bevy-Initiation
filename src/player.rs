@@ -26,10 +26,6 @@ pub enum PlayerState {
 #[derive(Component, Default)]
 struct AttackTimer(Timer);
 
-// Les animations du .glb, chargées une seule fois.
-// Le numéro = l'ordre des animations dans le fichier (76 au total), par exemple :
-//   36 Idle · 48 Running_A · 49 Running_B · 72 Walking_A · 62 Spellcast_Shoot
-//   60 Spellcast_Long · 22 Cheer · 38 Jump_Full_Long · 27 Dodge_Backward · 23 Death_A
 #[derive(Resource)]
 struct PlayerAnimations {
     idle: Handle<AnimationClip>,
@@ -50,8 +46,6 @@ fn spawn_player(mut commands: Commands, asset_server: Res<AssetServer>) {
     commands.spawn((
         SceneBundle {
             scene: asset_server.load(format!("{MODEL}#Scene0")),
-            // les pieds du modèle sont à y = 0 ; il mesure ~2,2 unités avec le chapeau,
-            // on le réduit un peu pour garder la même taille que l'ancien perso
             transform: Transform::from_xyz(0.0, 0.0, 0.0).with_scale(Vec3::splat(0.75)),
             ..default()
         },
@@ -61,8 +55,6 @@ fn spawn_player(mut commands: Commands, asset_server: Res<AssetServer>) {
     ));
 }
 
-// L'AnimationPlayer n'est pas sur l'entité Player : Bevy le crée sur un enfant
-// quand la scène du .glb a fini de charger. Dès qu'il apparaît, on lance « idle ».
 fn start_idle(
     animations: Res<PlayerAnimations>,
     mut players: Query<&mut AnimationPlayer, Added<AnimationPlayer>>,
@@ -121,9 +113,7 @@ if transform.translation.x < 7.0 {
         state.set_if_neq(PlayerState::Run);
         transform.translation += direction * 2.0 * time.delta_seconds();
 
-        // Le perso se tourne (en douceur) vers là où il court.
-        // Un modèle glTF regarde vers +Z, et looking_at oriente -Z vers la cible :
-        // on vise donc le point derrière lui pour que son visage soit dans la direction.
+      
         let target = Transform::from_translation(transform.translation)
             .looking_at(transform.translation - direction, Vec3::Y)
             .rotation;
@@ -132,8 +122,6 @@ if transform.translation.x < 7.0 {
     }
 }
 
-// Change d'animation seulement quand l'état change (sinon elle redémarre à chaque image).
-// C'est pour ça qu'on écrit l'état avec set_if_neq : il ne marque « changé » que si la valeur change vraiment.
 fn player_animation(
     animations: Res<PlayerAnimations>,
     state_q: Query<&PlayerState, (With<Player>, Changed<PlayerState>)>,
