@@ -1,61 +1,83 @@
-# Bevy-Initiation
+# Bevy 3D Experiment
 
-Petit projet réalisé avec Rust et Bevy dans le but d’explorer le développement de jeux et de mieux comprendre le fonctionnement du moteur.
+> Projet expérimental réalisé avec Rust et Bevy afin d'explorer le développement de jeux en 3D.
 
-Le projet est inachevé et volontairement abandonné. Il n’a pas vocation à devenir un jeu complet : il m’a surtout servi de terrain d’expérimentation pour apprendre et tester différentes fonctionnalités de Bevy.
+---
 
-Ce que j’ai expérimenté
+## À propos
 
-Systèmes et plugins Bevy
+Ce projet a été développé dans le but d'approfondir mes connaissances de **Bevy** et de **Rust** à travers la création d'un environnement 3D simple.
 
-Entity / Component / Query
+Le projet est **inachevé et volontairement abandonné**. Il n'avait pas pour objectif de devenir un jeu complet, mais de servir de terrain d'expérimentation pour découvrir et mettre en pratique différents concepts de Bevy.
 
-Gestion des inputs clavier
+---
 
-Déplacements et logique du joueur
+## Concepts explorés
 
-Système de projectiles
+- Architecture Entity Component System (ECS)
+- Systèmes et plugins Bevy
+- Gestion des inputs clavier
+- `Entity`, `Component` et `Query`
+- Déplacement du joueur
+- Gestion des projectiles
+- Création et manipulation de meshes 3D
+- Matériaux et textures
+- Éclairage
+- Transformations et positions dans l'espace 3D
+- Organisation d'un projet Rust
 
-Meshes 3D et matériaux
+---
 
-Lumières et éclairage
+## Technologies
 
-Textures
+| Technologie | Utilisation |
+|---|---|
+| Rust | Langage de programmation |
+| Bevy | Moteur de jeu |
 
-Transformations et positions dans un espace 3D
+---
 
-Organisation d’un projet Rust avec Bevy
+## État du projet
 
-État du projet
+**Statut : Expérimental / Abandonné**
 
-Projet non terminé.
+Le développement a été arrêté une fois l'objectif d'apprentissage atteint.
 
-Le développement a été arrêté une fois que le projet avait rempli son objectif principal : me permettre d'apprendre davantage sur Bevy et Rust dans un contexte concret.
+Certaines fonctionnalités sont donc incomplètes et le code peut contenir des expérimentations ou des implémentations qui n'ont pas été finalisées.
 
-Certaines fonctionnalités sont donc incomplètes ou peuvent contenir du code expérimental.
+---
 
-Technologies
+## Objectif
 
-Rust
+L'objectif principal était de comprendre les bases du développement 3D avec Bevy et de mettre en pratique les concepts du moteur dans un projet concret.
 
-Bevy
+Ce repository constitue principalement une trace de cette phase d'apprentissage.
 
-Pourquoi ce projet ?
+---
 
-Ce projet est avant tout une expérience d’apprentissage. Plutôt que de chercher à produire un jeu fini, l’objectif était de comprendre progressivement comment construire un projet avec Bevy et de mettre en pratique les concepts appris.
+## Installation
 
-Le code peut donc être imparfait : c'est volontairement un projet d'expérimentation plutôt qu'un projet de production.
+### Prérequis
 
-Installation
+- Rust
+- Cargo
 
-Avec Rust installé :
+### Lancement
 
-git clone <URL_DU_REPO>
+```bash
+git clone <URL_DU_REPOSITORY>
 cd <NOM_DU_PROJET>
 cargo run
+```
 
-Statut
+---
 
-🟡 Abandonné / expérimental
+## Notes
 
-Ce repository est conservé comme trace de mon apprentissage de Bevy et de Rust.
+Ce projet n'est plus activement développé. Il est conservé comme projet d'apprentissage et comme référence pour de futurs projets utilisant Rust et Bevy.
+
+---
+
+## Licence
+
+Aucune licence spécifique n'a été définie pour le moment.
