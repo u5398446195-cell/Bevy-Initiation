@@ -1,0 +1,7 @@
+KayKit : Adventurers Character Pack (1.0) — Mage
+Créé par Kay Lousberg (www.kaylousberg.com)
+Licence : Creative Commons Zero (CC0) — libre pour tout usage, crédit non obligatoire.
+Source : https://github.com/KayKit-Game-Assets/KayKit-Character-Pack-Adventures-1.0
+
+Modifié : le livre de sorts (fermé et ouvert) et la baguette ont été retirés du modèle
+pour ne garder que le bâton, le chapeau et la cape.
